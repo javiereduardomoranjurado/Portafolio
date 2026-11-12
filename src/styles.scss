@@ -1,14 +1,14 @@
 :root {
   --mgs-bg: #eef1f3;
   --mgs-surface: #ffffff;
-  --mgs-surface-alt: #f1f5f4;
-  --mgs-border: #cbd5d1;
-  --mgs-border-hover: #3b5249;
-  --mgs-text: #11181c;
-  --mgs-text-secondary: #334148;
-  --mgs-text-muted: #52636b;
-  --mgs-accent: #2c4a3e;
-  --mgs-accent-dark: #1f352c;
+  --mgs-surface-alt: #e8eef1;
+  --mgs-border: #b8c4c0;
+  --mgs-border-hover: #0f6848;
+  --mgs-text: #0f172a;
+  --mgs-text-secondary: #1e293b;
+  --mgs-text-muted: #475569;
+  --mgs-accent: #0f6848;
+  --mgs-accent-dark: #0a4b33;
 }
 
 * {
@@ -27,33 +27,33 @@ body {
 }
 
 .text-tactical-title {
-  color: #11181c !important;
+  color: #0f172a !important;
 }
 
 .text-tactical-body {
-  color: #334148 !important;
+  color: #1e293b !important;
 }
 
 .text-tactical-muted {
-  color: #52636b !important;
+  color: #475569 !important;
 }
 
 .mono-label {
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--mgs-accent) !important;
+  color: #0f6848 !important;
 }
 
 .tactical-panel {
-  background-color: var(--mgs-surface);
-  color: var(--mgs-text);
-  border: 1px solid var(--mgs-border);
-  border-radius: 4px;
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #b8c4c0;
+  border-radius: 6px;
   position: relative;
-  box-shadow: 0 2px 8px rgba(17, 24, 28, 0.04);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 
   &::before {
@@ -61,64 +61,87 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 12px;
-    height: 12px;
-    border-top: 2px solid var(--mgs-accent);
-    border-left: 2px solid var(--mgs-accent);
+    width: 14px;
+    height: 14px;
+    border-top: 3px solid #0f6848;
+    border-left: 3px solid #0f6848;
     pointer-events: none;
   }
 
   &:hover {
-    border-color: var(--mgs-border-hover);
-    box-shadow: 0 6px 18px rgba(17, 24, 28, 0.08);
+    border-color: #0f6848;
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.12);
   }
 }
 
 .tactical-chip {
   display: inline-block;
-  padding: 0.26rem 0.65rem;
+  padding: 0.3rem 0.7rem;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: #1e293b !important;
-  background-color: var(--mgs-surface-alt);
-  border: 1px solid var(--mgs-border);
-  border-radius: 3px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: #0f172a !important;
+  background-color: #e2e8f0 !important;
+  border: 1px solid #94a3b8;
+  border-radius: 4px;
 }
 
+a.btn-tactical-outline,
 .btn-tactical-outline {
-  background-color: #ffffff;
-  color: #11181c !important;
-  border: 1px solid #94a39e;
-  border-radius: 3px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  background-color: #1e293b !important;
+  color: #ffffff !important;
+  border: 2px solid #0f172a !important;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 700 !important;
   letter-spacing: 0.02em;
+  opacity: 1 !important;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
   transition: all 0.2s ease;
 
-  &:hover {
-    background-color: #f1f5f4;
-    border-color: var(--mgs-accent);
-    color: #000000 !important;
+  i,
+  span {
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #0f172a !important;
+    border-color: #000000 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
   }
 }
 
+a.btn-tactical-primary,
 .btn-tactical-primary {
-  background-color: var(--mgs-accent);
+  background-color: #0f6848 !important;
   color: #ffffff !important;
-  border: 1px solid var(--mgs-accent-dark);
-  border-radius: 3px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  border: 2px solid #094730 !important;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 700 !important;
   letter-spacing: 0.02em;
+  opacity: 1 !important;
+  box-shadow: 0 2px 6px rgba(15, 104, 72, 0.28);
   transition: all 0.2s ease;
 
-  &:hover {
-    background-color: var(--mgs-accent-dark);
+  i,
+  span {
     color: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #094730 !important;
+    border-color: #063322 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
   }
 }
 
 .section-divider {
-  border-top: 1px solid var(--mgs-border);
+  border-top: 1px solid #cbd5e1;
 }

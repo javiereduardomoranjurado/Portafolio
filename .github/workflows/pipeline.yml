@@ -2,7 +2,7 @@ name: Deploy Angular to GitHub Pages
 
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
 
   workflow_dispatch:
 
@@ -46,16 +46,16 @@ jobs:
       # 6. Generar build de Angular
       - name: Build Angular
         run: npm run build -- --base-href "/${{ github.event.repository.name }}/"
-        
+
       # 7. Configure SPA fallback (Opcional si no se usa el Hash)
       - name: Configure GitHub Pages fallback
-        run: cp ./dist/PROJECT_NAME/browser/index.html ./dist/PROJECT_NAME/browser/404.html
+        run: cp ./dist/Angular-Standalone-Template/browser/index.html ./dist/Angular-Standalone-Template/browser/404.html
 
       # 8. Subir artefacto generado
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/PROJECT_NAME/browser
+          path: ./dist/Angular-Standalone-Template/browser
 
   # Despliegue
   deploy:

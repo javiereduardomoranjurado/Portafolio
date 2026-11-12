@@ -1,0 +1,263 @@
+<div class="portfolio-wrapper">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-glass sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="#">
+        <i class="bi bi-boxes text-info fs-4"></i>
+        <span>DevPortfolio <span class="text-info">UCEVA</span></span>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#portfolioNavbar"
+        aria-controls="portfolioNavbar"
+        aria-expanded="false"
+        aria-label="Alternar navegación"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="portfolioNavbar">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#perfil">Perfil Profesional</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#habilidades">Tecnologías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="#proyectos">Catálogo (5 Proyectos)</a>
+          </li>
+          <li class="nav-item mt-2 mt-lg-0">
+            <a
+              class="btn btn-sm btn-live px-3 py-2 rounded-pill d-inline-flex align-items-center gap-2"
+              [href]="studentProfile.githubProfile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="bi bi-github"></i>
+              <span>@{{ studentProfile.githubUsername }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero / Perfil Profesional -->
+  <header id="perfil" class="py-5">
+    <div class="container py-lg-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <div class="hero-badge mb-3">
+            <i class="bi bi-cpu-fill"></i>
+            <span>{{ studentProfile.course }} • CI/CD con GitHub Actions & GitHub Pages</span>
+          </div>
+          <h1 class="display-5 fw-bold mb-3 gradient-title">
+            {{ studentProfile.name }}
+          </h1>
+          <p class="fs-5 text-info fw-semibold mb-2">
+            {{ studentProfile.role }}
+          </p>
+          <p class="text-secondary mb-4" style="line-height: 1.75; max-width: 740px;">
+            {{ studentProfile.summary }}
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a
+              href="#proyectos"
+              class="btn btn-live px-4 py-2 rounded-3 d-inline-flex align-items-center gap-2"
+            >
+              <i class="bi bi-collection-play-fill"></i>
+              <span>Explorar los 5 Proyectos</span>
+            </a>
+            <a
+              [href]="studentProfile.githubProfile"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-repo px-4 py-2 rounded-3 d-inline-flex align-items-center gap-2"
+            >
+              <i class="bi bi-github"></i>
+              <span>Perfil de GitHub</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="glass-card p-4">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="avatar-circle flex-shrink-0">
+                {{ studentProfile.initials }}
+              </div>
+              <div>
+                <h2 class="h5 fw-bold mb-1 text-white">{{ studentProfile.name }}</h2>
+                <span class="pipeline-badge">
+                  <i class="bi bi-check-circle-fill"></i> 5 Pipelines Activos
+                </span>
+              </div>
+            </div>
+            <hr class="border-secondary opacity-25" />
+            <ul class="list-unstyled mb-0 small text-secondary d-grid gap-2">
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-mortarboard-fill text-info mt-1"></i>
+                <span><strong class="text-light">Institución:</strong> {{ studentProfile.university }}</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-journal-code text-info mt-1"></i>
+                <span><strong class="text-light">Asignatura:</strong> {{ studentProfile.course }}</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-person-workspace text-info mt-1"></i>
+                <span><strong class="text-light">Docente:</strong> {{ studentProfile.professor }}</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <i class="bi bi-git text-info mt-1"></i>
+                <span><strong class="text-light">Rama & Workflow:</strong> <code>main</code> • <code>.github/workflows/pipeline.yml</code></span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Habilidades y Tecnologías -->
+  <section id="habilidades" class="py-4">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4">
+        <div>
+          <span class="text-info text-uppercase small fw-bold">Stack Tecnológico</span>
+          <h2 class="h3 fw-bold text-white mb-0 mt-1">Habilidades, Lenguajes y Tecnologías</h2>
+        </div>
+      </div>
+      <div class="row g-4">
+        @for (group of skillGroups; track group.title) {
+          <div class="col-md-4">
+            <div class="glass-card p-4 h-100">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <i class="bi {{ group.icon }} text-info fs-4"></i>
+                <h3 class="h6 fw-bold text-white mb-0">{{ group.title }}</h3>
+              </div>
+              <div class="d-flex flex-wrap gap-2">
+                @for (skill of group.skills; track skill) {
+                  <span class="skill-chip">
+                    <i class="bi bi-check2 text-info"></i>
+                    {{ skill }}
+                  </span>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo de 5 Proyectos -->
+  <section id="proyectos" class="py-5">
+    <div class="container">
+      <div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end mb-4 gap-3">
+        <div>
+          <span class="text-info text-uppercase small fw-bold">Dev Portfolio Project</span>
+          <h2 class="h2 fw-bold text-white mb-1 mt-1">Catálogo Oficial de Proyectos (5 Repositorios)</h2>
+          <p class="text-secondary mb-0">
+            Cada proyecto cuenta con su repositorio independiente, pruebas automatizadas y despliegue continuo en GitHub Pages mediante GitHub Actions.
+          </p>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+          @for (cat of categories; track cat) {
+            <button
+              type="button"
+              class="filter-btn"
+              [class.active]="selectedCategory === cat"
+              (click)="selectCategory(cat)"
+            >
+              {{ cat }}
+            </button>
+          }
+        </div>
+      </div>
+
+      <div class="row g-4">
+        @for (project of filteredProjects; track project.id) {
+          <div class="col-12 col-lg-6">
+            <article class="glass-card p-4 h-100 d-flex flex-column justify-content-between project-card">
+              <div>
+                <div class="d-flex flex-wrap justify-content-between align-items-center gap-2 mb-3">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="project-number">{{ project.code }}</span>
+                    <span class="badge bg-dark border border-secondary text-info">{{ project.category }}</span>
+                  </div>
+                  <span class="pipeline-badge">
+                    <i class="bi bi-rocket-takeoff-fill"></i>
+                    {{ project.pipelinePath }} ({{ project.branch }})
+                  </span>
+                </div>
+
+                <h3 class="h4 fw-bold text-white mb-2">
+                  {{ project.name }}
+                </h3>
+                <p class="text-secondary mb-3" style="line-height: 1.65;">
+                  {{ project.description }}
+                </p>
+
+                <div class="mb-3">
+                  <h4 class="small text-uppercase fw-bold text-info mb-2">
+                    <i class="bi bi-stars me-1"></i>Características Principales
+                  </h4>
+                  <ul class="small text-secondary ps-3 mb-0 d-grid gap-1">
+                    @for (feature of project.features; track feature) {
+                      <li>{{ feature }}</li>
+                    }
+                  </ul>
+                </div>
+
+                <div class="mb-4">
+                  <h4 class="small text-uppercase fw-bold text-info mb-2">
+                    <i class="bi bi-code-slash me-1"></i>Tecnologías Utilizadas
+                  </h4>
+                  <div class="d-flex flex-wrap gap-2">
+                    @for (tech of project.technologies; track tech) {
+                      <span class="tech-chip">{{ tech }}</span>
+                    }
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-3 border-top border-secondary border-opacity-25 d-flex flex-wrap gap-2">
+                <a
+                  [href]="project.repoUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-repo flex-grow-1 py-2 px-3 rounded-3 d-inline-flex align-items-center justify-content-center gap-2"
+                >
+                  <i class="bi bi-github"></i>
+                  <span>Ver Repositorio</span>
+                </a>
+                <a
+                  [href]="project.liveUrl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-live flex-grow-1 py-2 px-3 rounded-3 d-inline-flex align-items-center justify-content-center gap-2"
+                >
+                  <i class="bi bi-box-arrow-up-right"></i>
+                  <span>Ver Aplicación</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 border-top border-secondary border-opacity-25 mt-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small text-secondary">
+      <div>
+        <strong>{{ studentProfile.name }}</strong> — {{ studentProfile.university }}
+      </div>
+      <div>
+        Desplegado automáticamente con <strong>GitHub Actions</strong> en <strong>GitHub Pages</strong>
+      </div>
+    </div>
+  </footer>
+</div>

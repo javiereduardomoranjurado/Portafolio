@@ -20,9 +20,9 @@ export interface StudentProfile {
   name: string;
   codename: string;
   role: string;
-  university: string;
-  course: string;
-  professor: string;
+  specialty: string;
+  focus: string;
+  location: string;
   githubProfile: string;
   githubUsername: string;
   codecFreq: string;

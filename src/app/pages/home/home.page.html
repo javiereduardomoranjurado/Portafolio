@@ -44,25 +44,25 @@
         <div class="tactical-panel p-4 h-100 d-flex flex-column justify-content-between">
           <div>
             <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
-              <span class="mono-label">DOSSIER // DATOS</span>
-              <span class="mono-label text-tactical-muted">STATUS: ONLINE</span>
+              <span class="mono-label">DOSSIER // PERFIL</span>
+              <span class="mono-label text-tactical-muted">STATUS: ACTIVE</span>
             </div>
             <ul class="list-unstyled mb-0 small d-grid gap-3 dossier-list">
               <li>
-                <div class="mono-label text-tactical-muted mb-1">INSTITUCIÓN</div>
-                <div class="text-tactical-title fw-medium">{{ profile.university }}</div>
+                <div class="mono-label text-tactical-muted mb-1">ESPECIALIDAD</div>
+                <div class="text-tactical-title fw-medium">{{ profile.specialty }}</div>
               </li>
               <li>
-                <div class="mono-label text-tactical-muted mb-1">ASIGNATURA</div>
-                <div class="text-tactical-title fw-medium">{{ profile.course }}</div>
+                <div class="mono-label text-tactical-muted mb-1">ENFOQUE ARQUITECTÓNICO</div>
+                <div class="text-tactical-title fw-medium">{{ profile.focus }}</div>
               </li>
               <li>
-                <div class="mono-label text-tactical-muted mb-1">DOCENTE</div>
-                <div class="text-tactical-title fw-medium">{{ profile.professor }}</div>
+                <div class="mono-label text-tactical-muted mb-1">UBICACIÓN / MODALIDAD</div>
+                <div class="text-tactical-title fw-medium">{{ profile.location }}</div>
               </li>
               <li>
-                <div class="mono-label text-tactical-muted mb-1">DESPLIEGUE CONTINUO</div>
-                <div class="text-tactical-title fw-medium">GitHub Actions & GitHub Pages (main)</div>
+                <div class="mono-label text-tactical-muted mb-1">REPOSITORIO PRINCIPAL</div>
+                <div class="text-tactical-title fw-medium">github.com/{{ profile.githubUsername }}</div>
               </li>
             </ul>
           </div>
@@ -105,10 +105,9 @@
   <div class="container">
     <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-4 gap-2">
       <div>
-        <div class="mono-label mb-1">OPERACIONES REGISTRADAS // 05 REPOSITORIOS</div>
+        <div class="mono-label mb-1">PORTAFOLIO // PROYECTOS DESTACADOS</div>
         <h2 class="h3 fw-bold text-tactical-title mb-0">Catálogo de Proyectos</h2>
       </div>
-      <span class="mono-label text-tactical-muted">RAMA: MAIN • PIPELINE.YML</span>
     </div>
 
     <div class="row g-4">
@@ -125,10 +124,10 @@
 <footer class="py-4 section-divider">
   <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 small text-tactical-muted">
     <div>
-      <span class="text-tactical-title fw-semibold">{{ profile.name }}</span> — {{ profile.university }}
+      <span class="text-tactical-title fw-semibold">{{ profile.name }}</span> — Desarrollador de Software
     </div>
     <div class="mono-label text-tactical-muted">
-      CI/CD • GITHUB ACTIONS & GITHUB PAGES
+      © 2026 • TODOS LOS DERECHOS RESERVADOS
     </div>
   </div>
 </footer>

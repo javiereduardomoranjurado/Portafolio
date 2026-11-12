@@ -1,14 +1,14 @@
 :root {
-  --mgs-bg: #101416;
-  --mgs-surface: #161b1e;
-  --mgs-surface-alt: #1b2226;
-  --mgs-border: #283136;
-  --mgs-border-hover: #495a53;
-  --mgs-text: #e3e8ea;
-  --mgs-text-Secondary: #9aa5ab;
-  --mgs-text-muted: #6c787e;
-  --mgs-accent: #8ca396;
-  --mgs-accent-soft: rgba(140, 163, 150, 0.12);
+  --mgs-bg: #eef1f3;
+  --mgs-surface: #ffffff;
+  --mgs-surface-alt: #f1f5f4;
+  --mgs-border: #cbd5d1;
+  --mgs-border-hover: #3b5249;
+  --mgs-text: #11181c;
+  --mgs-text-secondary: #334148;
+  --mgs-text-muted: #52636b;
+  --mgs-accent: #2c4a3e;
+  --mgs-accent-dark: #1f352c;
 }
 
 * {
@@ -19,88 +19,103 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--mgs-bg);
-  color: var(--mgs-text);
+  background-color: var(--mgs-bg) !important;
+  color: var(--mgs-text) !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
 }
 
+.text-tactical-title {
+  color: #11181c !important;
+}
+
+.text-tactical-body {
+  color: #334148 !important;
+}
+
+.text-tactical-muted {
+  color: #52636b !important;
+}
+
 .mono-label {
   font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
   font-size: 0.76rem;
+  font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--mgs-accent);
+  color: var(--mgs-accent) !important;
 }
 
 .tactical-panel {
   background-color: var(--mgs-surface);
+  color: var(--mgs-text);
   border: 1px solid var(--mgs-border);
   border-radius: 4px;
   position: relative;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 8px rgba(17, 24, 28, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 
   &::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-top: 2px solid var(--mgs-accent);
     border-left: 2px solid var(--mgs-accent);
-    opacity: 0.55;
     pointer-events: none;
   }
 
   &:hover {
     border-color: var(--mgs-border-hover);
+    box-shadow: 0 6px 18px rgba(17, 24, 28, 0.08);
   }
 }
 
 .tactical-chip {
   display: inline-block;
-  padding: 0.24rem 0.62rem;
+  padding: 0.26rem 0.65rem;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: 0.74rem;
-  color: var(--mgs-text-Secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #1e293b !important;
   background-color: var(--mgs-surface-alt);
   border: 1px solid var(--mgs-border);
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
 .btn-tactical-outline {
-  background-color: transparent;
-  color: var(--mgs-text);
-  border: 1px solid var(--mgs-border);
+  background-color: #ffffff;
+  color: #11181c !important;
+  border: 1px solid #94a39e;
   border-radius: 3px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
   transition: all 0.2s ease;
 
   &:hover {
-    background-color: var(--mgs-surface-alt);
+    background-color: #f1f5f4;
     border-color: var(--mgs-accent);
-    color: #ffffff;
+    color: #000000 !important;
   }
 }
 
 .btn-tactical-primary {
-  background-color: #242f2b;
-  color: var(--mgs-text);
-  border: 1px solid #42564e;
+  background-color: var(--mgs-accent);
+  color: #ffffff !important;
+  border: 1px solid var(--mgs-accent-dark);
   border-radius: 3px;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.02em;
   transition: all 0.2s ease;
 
   &:hover {
-    background-color: #2e3d37;
-    border-color: var(--mgs-accent);
-    color: #ffffff;
+    background-color: var(--mgs-accent-dark);
+    color: #ffffff !important;
   }
 }
 

@@ -1,15 +1,30 @@
 .tactical-navbar {
-  background-color: rgba(16, 20, 22, 0.94);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--mgs-border);
+  background-color: #ffffff;
+  border-bottom: 2px solid #cbd5d1;
+}
+
+.nav-brand-title {
+  color: #11181c !important;
+  letter-spacing: 0.03em;
+}
+
+.nav-codec-badge {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2c4a3e;
+  background-color: #e6eeeb;
+  border: 1px solid #9ab0a7;
+  border-radius: 3px;
 }
 
 .nav-tactical {
-  font-size: 0.88rem;
-  color: var(--mgs-text-Secondary) !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334148 !important;
   transition: color 0.15s ease;
 
   &:hover {
-    color: var(--mgs-text) !important;
+    color: #11181c !important;
   }
 }

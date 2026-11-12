@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Angular-Standalone-Template": {
+    "Portafolio": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -66,10 +66,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Angular-Standalone-Template:build:production"
+              "buildTarget": "Portafolio:build:production"
             },
             "development": {
-              "buildTarget": "Angular-Standalone-Template:build:development"
+              "buildTarget": "Portafolio:build:development"
             }
           },
           "defaultConfiguration": "development"

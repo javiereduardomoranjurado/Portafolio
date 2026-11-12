@@ -49,13 +49,13 @@ jobs:
 
       # 7. Configure SPA fallback (Opcional si no se usa el Hash)
       - name: Configure GitHub Pages fallback
-        run: cp ./dist/Angular-Standalone-Template/browser/index.html ./dist/Angular-Standalone-Template/browser/404.html
+        run: cp ./dist/Portafolio/browser/index.html ./dist/Portafolio/browser/404.html
 
       # 8. Subir artefacto generado
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/Angular-Standalone-Template/browser
+          path: ./dist/Portafolio/browser
 
   # Despliegue
   deploy:

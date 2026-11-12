@@ -1,0 +1,15 @@
+.tactical-navbar {
+  background-color: rgba(16, 20, 22, 0.94);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--mgs-border);
+}
+
+.nav-tactical {
+  font-size: 0.88rem;
+  color: var(--mgs-text-Secondary) !important;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--mgs-text) !important;
+  }
+}
